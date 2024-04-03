@@ -1,0 +1,12 @@
+.list {
+	display: flex;
+	gap: 30px;
+	padding: 30px;
+	background: #88b5bf;
+
+	&__item {
+		width: calc((100% - 3 * 30px) / 4);
+		aspect-ratio: 1;
+		background: #0d89b0;
+	}
+}

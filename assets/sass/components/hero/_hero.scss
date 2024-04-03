@@ -1,0 +1,44 @@
+@use 'sass:list';
+
+.hero {
+	display: grid;
+	grid-template-columns:
+		minmax(100px, 390px)
+		minmax(100px, 590px)
+		minmax(100px, 160px);
+	grid-template-rows: 1fr 1fr;
+	gap: 0px 0px;
+	grid-template-areas:
+		'one two three'
+		'four four five';
+	gap: 15px;
+	background: #b3f95a;
+
+	&__item {
+		position: relative;
+		flex: 0 0 auto;
+		background: #8ad191;
+		height: 198px;
+	}
+
+	$area-list: (one, two, three, four, five);
+	@for $i from 1 through 5 {
+		&__item:nth-child(#{$i}) {
+			grid-area: list.nth($area-list, $i);
+
+			&::after {
+				content: '#{$i}';
+				position: absolute;
+				top: 0;
+				left: 0;
+				width: 100%;
+				height: 100%;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				font-size: 53px;
+				color: white;
+			}
+		}
+	}
+}

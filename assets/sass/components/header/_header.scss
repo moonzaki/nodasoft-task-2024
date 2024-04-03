@@ -1,0 +1,15 @@
+.header {
+	padding: 30.5px 30px;
+	background: #7faff6;
+
+	&__button {
+		input[type='checkbox'] {
+			display: none;
+		}
+
+		input[type='checkbox']:checked ~ .popup {
+			transform: translateY(0%);
+			top: 0;
+		}
+	}
+}
